@@ -5,8 +5,10 @@ class App extends React.Component {
                 <Hello 
                     to="Ringo" 
                     from="Paul" 
+                />
+                <Hello 
+                    to="George" 
                     bangs={4}
-                    img="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
                 />
             </div>
         )
