@@ -1,10 +1,10 @@
 import './App.css';
-import Game from './Game';
+import Random from './Random';
 
 function App() {
   return (
     <div className="App">
-      <Game />
+      <Random maxNum={7}/>
     </div>
   );
 }

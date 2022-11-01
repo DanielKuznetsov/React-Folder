@@ -1,19 +1,19 @@
 import React, {Component} from  "react"
 
 class Game extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         gameOver: false,
-    //         score: 0
-    //     }
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            gameOver: false,
+            score: 0
+        }
+    }
 
     // Alternative syntax
-    state = {
-        gameOver: true,
-        score: 99
-    }
+    // state = {
+    //     gameOver: true,
+    //     score: 99
+    // }
     
 
     render() {        
