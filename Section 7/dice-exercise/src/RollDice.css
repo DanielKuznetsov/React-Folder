@@ -1,0 +1,17 @@
+.RollDice-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 2rem 5.5rem;
+    margin-top: 2.5rem; 
+    color: #fff;
+    background-color: hsl(248, 53%, 58%);
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.RollDice-btn:hover {
+    background-color: hsl(248, 53%, 45%);
+}
