@@ -1,0 +1,9 @@
+.Lottery {
+    border: 2px solid black;
+    margin: .5rem;
+    padding: 2rem;
+}
+
+.Lottery-balls {
+    margin-bottom: 3rem;
+}
