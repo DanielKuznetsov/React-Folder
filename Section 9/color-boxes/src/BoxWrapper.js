@@ -14,10 +14,12 @@ class BoxWrapper extends Component {
         }
     }
 
+    randomColor = () => Math.floor(Math.random()*16777215).toString(16);
+
     render() {
         return (
             <div>
-                {this.state.numBox.map((el, i) => <Box key={i} />)}
+                {this.state.numBox.map((el, i) => <Box key={i} bgColor={`#${this.randomColor()}`} />)}
             </div>
         )
     }
