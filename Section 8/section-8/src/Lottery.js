@@ -20,7 +20,7 @@ class Lottery extends React.Component {
     generate() {
         this.setState(currState => ({
             nums: currState.nums.map(
-                n => Math.floor(Math.random() * this.props.maxNum + 1) )
+                n => Math.floor(Math.random() * this.props.maxNum + 1))
         }))
     }
 

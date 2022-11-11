@@ -14,7 +14,7 @@ class CoinWrapper extends Component {
             side: "",
             flips: 0
         }
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
     }
 
     generate() {
