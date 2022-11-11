@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import axios from 'axios'
-import "./ZenQuote.css"
+import "./loader.css"
 
 class ZenQuote extends Component {
     constructor(props) {
@@ -24,7 +24,6 @@ class ZenQuote extends Component {
         setTimeout(
             function() {
                 this.setState({rNum: Math.floor(Math.random() * 50) + 1, isLoaded: true})
-
             }.bind(this), 3000
         )
     }
