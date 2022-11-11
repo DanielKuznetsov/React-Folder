@@ -2,9 +2,9 @@ import React, {Component} from "react";
 
 class DidMount extends Component {
     constructor(props) {
-    super(props);
-    this.state = {
-        time: new Date(),
+        super(props);
+        this.state = {
+            time: new Date(),
         }
     }
 
