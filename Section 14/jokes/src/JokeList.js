@@ -15,6 +15,7 @@ class JokeList extends Component {
             jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]"),
             isLoading: false,
         }
+        this.seenJokes = new Set(this.state.jokes.map(j => j.text));
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -22,17 +23,24 @@ class JokeList extends Component {
         if(this.state.jokes.length === 0) this.getJokes();
     }
 
+    // !!!
     async getJokes() {
         let jokesArr = [];
 
-        while(jokesArr.length <= this.props.numJokesToGet) {
+        while(jokesArr.length < this.props.numJokesToGet) {
             let res = await axios.get("https://icanhazdadjoke.com/", {
                 headers: {
                     "Accept": "application/json"
                 }
             });
 
-            jokesArr.push({id: uuidv4(), text: res.data.joke, votes: 0});
+            let newJoke = res.data.joke;
+            if(!this.seenJokes.has(newJoke)) {
+                jokesArr.push({id: uuidv4(), text: newJoke, votes: 0});
+            } else {
+                console.log("FOUND A DUPLICATE")
+                console.log(newJoke)
+            }
         }
 
         this.setState(state => ({
@@ -70,6 +78,8 @@ class JokeList extends Component {
             )
         }
 
+        let jokes = this.state.jokes.sort((a, b) => b.votes - a.votes)
+
         return (
             <div className='JokeList'>
                 <div className='JokeList-sidebar'>
@@ -79,11 +89,12 @@ class JokeList extends Component {
                 </div>
 
                 <div className='JokeList-jokes'>
-                    {this.state.jokes.map(joke => (
+                    {jokes.map(joke => (
                         <Joke 
                             key={joke.id} 
                             votes={joke.votes} 
                             text={joke.text} 
+                            // !!!
                             upvote={() => this.handleVote(joke.id, 1)} 
                             downvote={() => this.handleVote(joke.id, -1)}
                         />

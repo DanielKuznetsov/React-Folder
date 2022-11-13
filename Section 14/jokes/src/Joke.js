@@ -20,6 +20,7 @@ class Joke extends Component {
         }
     }    
 
+    // !!!
     getEmoji() {
         if (this.props.votes >= 15) {
           return "em em-rolling_on_the_floor_laughing";
