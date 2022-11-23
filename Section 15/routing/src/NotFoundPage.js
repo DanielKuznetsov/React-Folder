@@ -6,7 +6,7 @@ function NotFoundPage() {
 
     useEffect(() => {
         setTimeout(() => {
-            navigate("/")
+            navigate("/") // -1 to go 1 page back
         }, 1000);
     }, []);
 

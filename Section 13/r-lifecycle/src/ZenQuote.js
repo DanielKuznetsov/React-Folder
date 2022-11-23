@@ -28,9 +28,15 @@ class ZenQuote extends Component {
         )
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log("INSIDE COMPONENT DID UPDATE")
+
+        // Checking for previous state changes (old state or props)
+        console.log(prevState.rNum);
+        console.log(this.state.rNum);
+    }
+
     render() {
-
-
         return (
             <div>
                 {this.state.isLoaded ? (
