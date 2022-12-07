@@ -1,12 +1,18 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
+const userRoutes = require('./routes/userRoutes.js')
 
 dotenv.config({ path: "./config.env" });
 const app = express();
 
 // to suppress the warnings
 mongoose.set('strictQuery', true);
+
+// for api to work
+app.use(express.json());
+
+app.use('/api/v1/users', userRoutes);
 
 // Server configuration
 const connect = async () => {
