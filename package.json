@@ -5,10 +5,13 @@
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "env": "^0.0.2",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "live-server": "^1.2.2",
-    "mongoose": "^6.7.5",
+    "mongoose": "^6.8.0",
+    "nodemon": "^2.0.20",
     "path": "^0.12.7",
-    "react-router-dom": "^6.4.3"
+    "react-router-dom": "^6.4.3",
+    "validator": "^13.7.0"
   }
 }
